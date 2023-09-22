@@ -14,7 +14,7 @@ Este projeto tem como objetivo criar uma API usando o toolkit bun e framework El
 
 ```bash
 # clonar repositório
-git clone
+git clone https://github.com/walber-vaz/backend-bun-clean-architecture.git
 
 # entrar na pasta do projeto
 cd clean-architecture-bun
