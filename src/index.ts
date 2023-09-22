@@ -1,7 +1,13 @@
-import { Elysia } from "elysia";
+import { Elysia } from 'elysia';
+import { RepositoryUserMemory } from '@/external/memory/RepositoryUserMemory';
+import { RegisterUser } from '@/core/user/service/RegisterUser';
+import { RegisterUserController } from '@/adapters/user/RegisterUserController';
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
+const app = new Elysia();
 
-console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-);
+const repository = new RepositoryUserMemory();
+const registerUser = new RegisterUser(repository);
+
+new RegisterUserController(app, registerUser);
+
+app.listen(3000);
