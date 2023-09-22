@@ -1,0 +1,11 @@
+{
+  "material-icon-theme.folders.associations": {
+    "core": "rules",
+    "adapters": "pipe",
+    "external": "tools",
+    "user": "admin"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+}
