@@ -1,4 +1,8 @@
-import { IUser, IUserResponseFindUser } from '@/core/user/model/IUser';
+import {
+  IAllUsersPerPage,
+  IUser,
+  IUserResponseFindUser,
+} from '@/core/user/model/IUser';
 import { IRepositoryUser } from '@/core/user/service/IRepositoryUser';
 import { t } from 'elysia';
 
@@ -14,16 +18,6 @@ export class RepositoryUserMemory implements IRepositoryUser {
     return newUser;
   }
 
-  async findByEmail(email: string): Promise<IUser | null> {
-    const user = this.users.find((user) => user.email === email);
-
-    if (user) {
-      const { password, ...userWithoutPassword } = user;
-      return userWithoutPassword as IUser;
-    }
-
-    return null;
-  }
   async findById(id: number): Promise<IUserResponseFindUser | null> {
     const user = this.users.find((user) => user.id === id);
 
@@ -39,8 +33,14 @@ export class RepositoryUserMemory implements IRepositoryUser {
     throw new Error('Method not implemented.');
   }
 
-  async index(): Promise<IUser[]> {
-    throw new Error('Method not implemented.');
+  async index(skip: number, take: number): Promise<IAllUsersPerPage> {
+    const users = this.users.slice(skip, take);
+
+    return {
+      users,
+      skip,
+      take,
+    };
   }
 
   async update(id: string, user: IUser): Promise<IUser> {

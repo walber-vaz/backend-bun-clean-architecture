@@ -16,3 +16,11 @@ export interface IUserResponseFindUser {
   updatedAt?: Date;
   deletedAt?: Date;
 }
+
+export interface IAllUsersPerPage {
+  users: IUserResponseFindUser[];
+  skip: number;
+  take: number;
+  total: number;
+  pages: number;
+}

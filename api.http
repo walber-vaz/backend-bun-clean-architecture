@@ -12,12 +12,12 @@ Content-Type: application/json
 
 ### ==================================================
 
-## Find By Email
-GET {{baseUrl}}/users?email=wvs.walber@gmail.com
+## Find By Id
+GET {{baseUrl}}/users/2
 
 ### ==================================================
 
-## Find By Id
-GET {{baseUrl}}/users/2
+## Find All Users
+GET {{baseUrl}}/users
 
 ### ==================================================
