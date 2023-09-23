@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:13.6
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: db_backend_bun_clean_architecture
+    ports:
+      - 5432:5432
+    volumes:
+      - $HOME/.postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
+    driver: local
