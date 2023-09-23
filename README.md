@@ -13,6 +13,7 @@
 src
 ├── adapters # Camada de adaptadores
 │   └── user
+│       ├── FindUserEmailController.ts
 │       └── RegisterUserController.ts
 ├── core # Camada de regras de negócio
 │   ├── shared
@@ -21,12 +22,19 @@ src
 │       ├── model
 │       │   └── IUser.ts
 │       └── service
+│           ├── FindUserEmail.ts
 │           ├── IRepositoryUser.ts
 │           └── RegisterUser.ts
 ├── external # Camada de serviços externos
 │   ├── memory
 │   │   └── RepositoryUserMemory.ts
 │   └── prisma
+│       ├── migrations
+│       │   ├── 20230923003356_init_table
+│       │   │   └── migration.sql
+│       │   └── migration_lock.toml
+│       ├── RepositoryUserPrisma.ts
+│       └── schema.prisma
 └── index.ts
 ```
 
