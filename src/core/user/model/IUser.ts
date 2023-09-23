@@ -8,7 +8,7 @@ export interface IUser {
   deletedAt?: Date;
 }
 
-export interface IUserRepsonseFindUser {
+export interface IUserResponseFindUser {
   id?: number;
   name: string;
   email: string;

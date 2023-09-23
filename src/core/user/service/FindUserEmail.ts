@@ -1,11 +1,11 @@
 import { IUserCase } from '@/core/shared/IUserCase';
 import { IRepositoryUser } from './IRepositoryUser';
-import { IUserRepsonseFindUser } from '@/core/user/model/IUser';
+import { IUserResponseFindUser } from '@/core/user/model/IUser';
 
-export class FindUserEmail implements IUserCase<string, IUserRepsonseFindUser> {
+export class FindUserEmail implements IUserCase<string, IUserResponseFindUser> {
   constructor(private readonly repository: IRepositoryUser) {}
 
-  async execute(input: string): Promise<IUserRepsonseFindUser> {
+  async execute(input: string): Promise<IUserResponseFindUser> {
     const user = await this.repository.findByEmail(input.trim());
     if (!user) throw new Error('User not found');
     return {
