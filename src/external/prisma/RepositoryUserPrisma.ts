@@ -59,7 +59,6 @@ export class RepositoryUserPrisma implements IRepositoryUser {
         name: user.name,
         email: user.email,
         password: user.password,
-        deletedAt: null,
       },
     })) as IUser;
   }
