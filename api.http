@@ -10,7 +10,14 @@ Content-Type: application/json
   "password": "12345678"
 }
 
-###
+### ==================================================
 
 ## Find By Email
 GET {{baseUrl}}/users?email=wvs.walber@gmail.com
+
+### ==================================================
+
+## Find By Id
+GET {{baseUrl}}/users/2
+
+### ==================================================
