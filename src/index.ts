@@ -2,8 +2,8 @@ import { Elysia } from 'elysia';
 import { RegisterUser } from '@/core/user/service/RegisterUser';
 import { RegisterUserController } from '@/adapters/user/RegisterUserController';
 import { RepositoryUserPrisma } from '@/external/prisma/RepositoryUserPrisma';
-import { FindUserEmail } from './core/user/service/FindUserEmail';
-import { FindUserEmailController } from './adapters/user/FindUserEmailController';
+import { FindUserEmail } from '@/core/user/service/FindUserEmail';
+import { FindUserEmailController } from '@/adapters/user/FindUserEmailController';
 
 const app = new Elysia();
 
