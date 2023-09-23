@@ -9,3 +9,8 @@ Content-Type: application/json
   "email": "wvs.walber@gmail.com",
   "password": "12345678"
 }
+
+###
+
+## Find By Email
+GET {{baseUrl}}/users?email=wvs.walber@gmail.com

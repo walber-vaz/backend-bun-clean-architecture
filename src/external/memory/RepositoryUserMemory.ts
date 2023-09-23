@@ -1,5 +1,5 @@
-import { IUser } from '../../core/user/model/IUser';
-import { IRepositoryUser } from '../../core/user/service/IRepositoryUser';
+import { IUser } from '@/core/user/model/IUser';
+import { IRepositoryUser } from '@/core/user/service/IRepositoryUser';
 
 export class RepositoryUserMemory implements IRepositoryUser {
   constructor(private readonly users: IUser[] = []) {}
@@ -16,6 +16,11 @@ export class RepositoryUserMemory implements IRepositoryUser {
   async findByEmail(email: string): Promise<IUser | null> {
     const user = this.users.find((user) => user.email === email);
 
-    return user || null;
+    if (user) {
+      const { password, ...userWithoutPassword } = user;
+      return userWithoutPassword as IUser;
+    }
+
+    return null;
   }
 }
